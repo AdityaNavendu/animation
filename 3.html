@@ -15,5 +15,14 @@
             </div>
         </div>
     </section>
+    <script>
+        const banner=document.getElementsByClassName("banner")[0];
+        const block=document.getElementsByClassName("block");
+        for(var i=0; i<400; i++){
+            banner.innerHTML+="<div class='block'></div>";
+            block[i].animationDelay='${i*0.05}s';
+            
+        }
+    </script>
 </body>
 </html>
