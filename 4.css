@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #07252d;
+}
+
+h2 {
+    position: relative;
+    font-size: 6em;
+    letter-spacing: 15px;
+    color: #0e3742;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 0.70em;
+
+
+}
+
+h2::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: scaleY(-1);
+    transform-origin: top;
+
+    color: #0e3742;
+    opacity: 0.35;
+    filter: blur(1px);
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.5),
+        transparent
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.5),
+        transparent
+    );
+}
