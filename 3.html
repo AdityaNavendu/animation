@@ -10,18 +10,28 @@
     <section>
         <h2>js animation</h2>
         <div class="banner">
-            <div class="block">
-                
-            </div>
         </div>
     </section>
     <script>
-        const banner=document.getElementsByClassName("banner")[0];
-        const block=document.getElementsByClassName("block");
-        for(var i=0; i<400; i++){
-            banner.innerHTML+="<div class='block'></div>";
-            block[i].annimationDelay='${i.0.05}*s'
+        const banner = document.querySelector(".banner");
+        const blocks = document.createDocumentFragment();
+        const columns = 20;
+        const blockStagger = 0.005;
+        let rowStart = 0;
+        for (let i = 0; i < 400; i++) {
+            const block = document.createElement("div");
+            block.className = "block";
+            const row = Math.floor(i / columns);
+            const column = i % columns;
+            const blockDuration = 0.1 + row * 0.01;
+            block.style.animationDuration = `${blockDuration}s`;
+            block.style.animationDelay = `${rowStart + column * blockStagger}s`;
+            if (column === columns - 1) {
+                rowStart += blockDuration + (columns - 1) * blockStagger;
+            }
+            blocks.append(block);
         }
+        banner.append(blocks);
     </script>
 </body>
 </html>
