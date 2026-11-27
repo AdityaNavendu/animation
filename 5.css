@@ -21,9 +21,18 @@ section .loader span {
     left: 0;
     height: 100%;
     width: 100%;
-
+transform: rotate(calc(18deg*var(--i)));
 }
 
 section .loader span::before {
-    
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #00ff0a;
+    box-shadow: 0 0 10px #00ff0a,0 0 20px #00ff0a,0 0 30px #00ff0a,0 0 40px #00ff0a;
+
 }
