@@ -3,3 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #421104
+}
+section .loader {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    
+}
